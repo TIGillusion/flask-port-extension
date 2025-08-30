@@ -17,7 +17,7 @@
 
 ```python
 from flask import Flask, jsonify
-from pytools.flask_port_extension import enable_port_sharing
+from flask_port_extension import enable_port_sharing
 
 # 创建你的Flask应用
 app = Flask(__name__)
@@ -39,7 +39,7 @@ app.run()
 import threading
 import time
 from flask import Flask
-from pytools.flask_port_extension import enable_port_sharing, start_master_server
+from flask_port_extension import enable_port_sharing, start_master_server
 
 # 先启动主控服务器
 start_master_server(host='127.0.0.1', port=5000)
@@ -115,7 +115,7 @@ threading.Thread(target=lambda: app2.run(), daemon=True).start()
 ### 启用性能优化
 
 ```python
-from pytools.flask_port_extension.performance import enable_performance_optimization
+from flask_port_extension.performance import enable_performance_optimization
 
 # 启用性能优化
 enable_performance_optimization(
@@ -139,7 +139,7 @@ enable_performance_optimization(
 ### 自定义性能参数
 
 ```python
-from pytools.flask_port_extension.performance import PerformanceOptimizer
+from flask_port_extension.performance import PerformanceOptimizer
 
 optimizer = PerformanceOptimizer(
     enable_monitoring=True,
@@ -156,7 +156,7 @@ optimizer = PerformanceOptimizer(
 ### 应用优化
 
 ```python
-from pytools.flask_port_extension.utils import optimize_flask_app
+from flask_port_extension.utils import optimize_flask_app
 
 # 为应用添加额外优化
 app = optimize_flask_app(
@@ -172,7 +172,7 @@ app = optimize_flask_app(
 ### 运行完整演示
 
 ```bash
-cd pytools/flask-port-extension
+cd flask-port-extension
 python demo.py
 ```
 
@@ -199,8 +199,8 @@ python examples.py perf
 ### 获取性能统计
 
 ```python
-from pytools.flask_port_extension import get_master_server_status
-from pytools.flask_port_extension.performance import get_performance_optimizer
+from flask_port_extension import get_master_server_status
+from flask_port_extension.performance import get_performance_optimizer
 
 # 获取服务器状态
 status = get_master_server_status()
@@ -300,5 +300,6 @@ flask-caching>=1.10.0  # 缓存支持
 欢迎提交问题和功能请求！
 
 ## 📄 许可证
+
 
 MIT License
